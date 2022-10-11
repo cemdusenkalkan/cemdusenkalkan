@@ -1,4 +1,3 @@
-Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Cem Düşenkalkan=======================================================================================================================================Student-------Learning how to code rn* 🌍  I'm based in Istanbul* ✉️  You can contact me at [dusenkalkancem@gmail.com](mailto:dusenkalkancem@gmail.com)* 🧠  I'm learning C++
 
 ### Skills
 

@@ -1,0 +1,31 @@
+name: Snake
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: Platane/snk/svg-only@v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg?color_snake=#0891b2&color_dots=#ebedf0,#ccfbf1,#5eead4,#22d3ee,#8b5cf6
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#22d3ee&color_dots=#161b22,#12313a,#0e7490,#22d3ee,#8b5cf6
+      - uses: crazy-max/ghaction-github-pages@v5.0.0
+        with:
+          target_branch: output
+          build_dir: dist
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
